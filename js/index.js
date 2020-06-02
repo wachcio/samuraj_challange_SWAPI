@@ -53,7 +53,6 @@ const createTable = () => {
             </tbody>
         </table>
     `;
-    // console.log(app);
 };
 
 const sortTable = (table) => {
@@ -66,10 +65,7 @@ const addRowsToTable = (rows) => {
     let currentLetter = '';
 
     rows.map((e) => {
-        currentLetter = e.name[0];
-
-        if (currentLetter == lastLetter) {
-            tbody.innerHTML += `
+        const newItem = `
         <tr class="table_body__tr">
         <td class="table_head_tb">${e.name}</td>
         <td class="table_head_tb">${e.eye_color}</td>
@@ -79,22 +75,18 @@ const addRowsToTable = (rows) => {
         <td class="table_head_tb">${e.mass}</td>
         </tr>
         `;
+
+        currentLetter = e.name[0];
+
+        if (currentLetter == lastLetter) {
+            tbody.innerHTML += newItem;
         } else {
             tbody.innerHTML += `
         <tr class="table_body__tr">
         <td class="table_head_tb">${currentLetter}</td>
         </tr>
         `;
-            tbody.innerHTML += `
-        <tr class="table_body__tr">
-        <td class="table_head_tb">${e.name}</td>
-        <td class="table_head_tb">${e.eye_color}</td>
-        <td class="table_head_tb">${e.gender}</td>
-        <td class="table_head_tb">${e.hair_color}</td>
-        <td class="table_head_tb">${e.height}</td>
-        <td class="table_head_tb">${e.mass}</td>
-        </tr>
-        `;
+            tbody.innerHTML += newItem;
         }
         lastLetter = currentLetter;
     });
