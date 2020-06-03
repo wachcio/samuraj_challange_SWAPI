@@ -1,0 +1,14 @@
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.letter_only,
+.letter_only:hover {
+    background-color: darkred !important;
+    color: white !important;
+    font-size: 2em;
+    font-weight: 600;
+    text-transform: uppercase;
+}

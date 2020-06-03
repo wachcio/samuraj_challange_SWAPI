@@ -36,15 +36,15 @@ function getAllStarwarsPeople() {
 const createTable = () => {
     let app = document.querySelector('#app');
     app.innerHTML = `
-    <table class="table">
-            <thead class="table_head">
+    <table class="table  table-striped table-hover">
+            <thead class="table_head>
                 <tr class="table_head__tr">
-                    <th class="table_head_th">Name</th>
-                    <th class="table_head_th">Eye Color</th>
-                    <th class="table_head_th">Gender</th>
-                    <th class="table_head_th">Hair Color</th>
-                    <th class="table_head_th">Height</th>
-                    <th class="table_head_th">Mass</th>
+                    <th class="table_head_th" scope="col">Name</th>
+                    <th class="table_head_th" scope="col">Eye Color</th>
+                    <th class="table_head_th" scope="col">Gender</th>
+                    <th class="table_head_th" scope="col">Hair Color</th>
+                    <th class="table_head_th" scope="col">Height</th>
+                    <th class="table_head_th" scope="col">Mass</th>
                 </tr>
             </thead>
             <tbody class="table_body">
@@ -82,8 +82,8 @@ const addRowsToTable = (rows) => {
             tbody.innerHTML += newItem;
         } else {
             tbody.innerHTML += `
-        <tr class="table_body__tr">
-        <td class="table_head_tb">${currentLetter}</td>
+        <tr class="table_body__tr letter_only">
+        <td class="table_head_tb" colspan="6">${currentLetter}</td>
         </tr>
         `;
             tbody.innerHTML += newItem;
